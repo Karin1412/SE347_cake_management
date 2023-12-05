@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../assets/logo.png'
 import logoSearch from '../../assets/Button.png'
 import logoShell from '../../assets/shell.png'
+// import { useNavigate } from 'react-router-dom';  
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -40,6 +41,11 @@ class NavBar extends React.Component {
         // Action
         console.log('Button Clicked!');
       }
+    
+    handleClick = (myLink) => () => {
+        window.location.href=myLink;
+    }
+    
 
     render(){
         return (
@@ -52,7 +58,7 @@ class NavBar extends React.Component {
                 </div>
 
                 {/* Logo Search Account */}
-                <div className='w-full h-1/2 bg-[#ffffff] border border-[#C8C9CB] flex justify-around'>
+                <div className='w-full h-1/2 bg-[#ffffff]  flex justify-around'>
                     <img src={logo} alt='logo' className='h-full'></img>
                     <div className='py-1.5 w-2/4 flex justify-center items-center'>
                         <input type="text" placeholder="Search" className='w-3/5 h-[85%] rounded-xl border border-[#C8C9CB] p-2 mr-4 ml-[100px]'/>
@@ -61,11 +67,20 @@ class NavBar extends React.Component {
                         <button type="button" className='h-[80%] w-[20%] bg-no-repeat' style={{ backgroundImage: `url(${logoSearch})`, backgroundSize: 'contain'}} onClick={() => this.handleButtonClick()}></button>
                     </div>
                     <div className='flex justify-end items-center space-x-3'>
-                        <div>Your Account</div>
+                    <div onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Your Account</div>
                         <hr className='border-l border-[#C8C9CB] h-[50%]' />
                         <img src={logoShell} alt='logoShell' className=''></img>
                     </div>
                 </div>
+
+                {/* menu */}
+                <div className='w-full h-1/4 bg-[#ffffff] border border-[#C8C9CB] flex justify-around'>
+                    <div onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Home</div>
+                    <div onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Categories</div>
+                    <div onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>About us</div>
+                    <div onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Support</div>
+                    <div onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Contact us</div>
+                </div>  
             </div> 
           </div> 
         )
