@@ -2,7 +2,6 @@ import React from 'react';
 import logo from '../../assets/logo.png'
 import logoSearch from '../../assets/Button.png'
 import logoShell from '../../assets/shell.png'
-// import { useNavigate } from 'react-router-dom';  
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -49,7 +48,6 @@ class NavBar extends React.Component {
 
     render(){
         return (
-          <div className='w-screen h-screen'>
             <div className="w-full h-1/6 bg-gray-400">
                 {/* Notification */}
                 <div className='w-full h-1/4 text-center bg-[#654229] p-0.5 text-white space-x-4'>
@@ -81,8 +79,7 @@ class NavBar extends React.Component {
                     <div onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Support</div>
                     <div onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Contact us</div>
                 </div>  
-            </div> 
-          </div> 
+            </div>  
         )
     }
 }

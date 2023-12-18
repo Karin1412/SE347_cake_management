@@ -1,12 +1,10 @@
-import NavBar from "./components/productDetails/navbar";
+import ProductDetail from "./views/productDetail";
 
 function App() {
   return (
-    <div>
-        <NavBar>
-
-        </NavBar>
-    </div>
+    <>
+      <ProductDetail />
+    </>
   );
 }
 
