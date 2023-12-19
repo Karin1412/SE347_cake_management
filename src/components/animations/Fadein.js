@@ -52,4 +52,8 @@ const FadeIn = ({ children, delay, direction, fullWidth, padding }) => {
   );
 };
 
+<<<<<<< HEAD
 export default FadeIn;
+=======
+export default FadeIn;
+>>>>>>> main
