@@ -74,7 +74,7 @@ class NavBar extends React.Component {
 
                 {/* menu */}
                 <div className='w-full h-1/4 bg-[#ffffff] border border-[#C8C9CB] flex justify-around'>
-                    <div onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Home</div>
+                    <Link to=" /home">Home</Link>
                     <div onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Categories</div>
                     <Link to = "/about-us">About Us</Link>
                     <div onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Support</div>

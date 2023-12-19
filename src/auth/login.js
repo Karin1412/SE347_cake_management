@@ -58,7 +58,7 @@ const Login = () => {
                         
                     />
                     </div>
-                    <Link to={'/product-detail'}>
+                    <Link to={'/home'}>
                         <button
                             type="submit"
                             className="bg-[#69432B] text-white py-2 px-4 ml-16 mt-1 rounded-md hover:bg-orange-950 focus:outline-none focus:ring focus:border-blue-300 md:w-1/2"
