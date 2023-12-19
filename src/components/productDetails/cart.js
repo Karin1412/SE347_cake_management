@@ -10,7 +10,6 @@ import nn4 from '../../assets/nn4.png'
 import bg1 from '../../assets/bg1.png'
 import bg2 from '../../assets/bg2.png'
 import bg3 from '../../assets/bg3.png'
-import NavBar from './navbar';
 
 class Cart extends React.Component {
 
