@@ -1,6 +1,7 @@
 import React from 'react';
 import BackLog from '../assets/back_log.avif'
 import { Link } from 'react-router-dom';
+import FadeIn from '../components/animations/Fadein';
 
 
 
@@ -28,7 +29,8 @@ const Login = () => {
 
 */
     return (
-        <div className='bg-gray-100 h-screen flex items-center justify-center'>
+        <FadeIn delay={0.2} direction="left">
+            <div className='bg-gray-100 h-screen flex items-center justify-center'>
             <div className="max-w-[980px] w-full bg-white p-8 rounded-md shadow-md flex">
                 <div className="w-1/4">
                     <img src={BackLog} alt="" />
@@ -56,7 +58,7 @@ const Login = () => {
                         
                     />
                     </div>
-                    <Link to={'/home'}>
+                    <Link to={'/product-detail'}>
                         <button
                             type="submit"
                             className="bg-[#69432B] text-white py-2 px-4 ml-16 mt-1 rounded-md hover:bg-orange-950 focus:outline-none focus:ring focus:border-blue-300 md:w-1/2"
@@ -75,6 +77,8 @@ const Login = () => {
         </div>
       </div>
         </div>
+        </FadeIn>
+        
     );
 };
 

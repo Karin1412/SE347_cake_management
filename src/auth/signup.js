@@ -1,13 +1,15 @@
 import React from 'react';
 import BgSignUp from '../assets/bg_signup.avif'
 import { Link } from 'react-router-dom';
+import FadeIn from '../components/animations/Fadein';
 
 
 
 const Login = () => {
 
     return (
-        <div className='bg-gray-100 h-screen flex items-center justify-center'>
+        <FadeIn delay={0.2} direction="right">
+            <div className='bg-gray-100 h-screen flex items-center justify-center'>
             <div className="max-w-[980px] w-full bg-white p-8 rounded-md shadow-md flex">
                 <div className="w-3/4 px-8 flex flex-col">
                     <h3 className="text-2xl font-semibold mb-4 self-start text-[#69432B]">Chocobrat</h3>
@@ -60,6 +62,8 @@ const Login = () => {
                 </div>
             </div>
         </div>
+        </FadeIn>
+        
     );
 };
 
