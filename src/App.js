@@ -1,10 +1,10 @@
-import ProductDetail from "./views/productDetail";
+
 
 function App() {
   return (
-    <>
-      <ProductDetail />
-    </>
+    <div>
+      
+    </div>
   );
 }
 
