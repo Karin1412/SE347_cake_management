@@ -1,0 +1,10 @@
+<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icons/Facebook">
+<path id="Facebook" fill-rule="evenodd" clip-rule="evenodd" d="M13.6347 21.2273V13.266H16.3581L16.7666 10.1625H13.6347V8.18129C13.6347 7.28302 13.888 6.67086 15.2027 6.67086L16.8769 6.67018V3.89425C16.5874 3.85734 15.5935 3.77274 14.4368 3.77274C12.0215 3.77274 10.3679 5.21881 10.3679 7.87392V10.1625H7.63623V13.266H10.3679V21.2273H13.6347Z" fill="#272727"/>
+<mask id="mask0_10_466" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="7" y="3" width="10" height="19">
+<path id="Facebook_2" fill-rule="evenodd" clip-rule="evenodd" d="M13.6347 21.2273V13.266H16.3581L16.7666 10.1625H13.6347V8.18129C13.6347 7.28302 13.888 6.67086 15.2027 6.67086L16.8769 6.67018V3.89425C16.5874 3.85734 15.5935 3.77274 14.4368 3.77274C12.0215 3.77274 10.3679 5.21881 10.3679 7.87392V10.1625H7.63623V13.266H10.3679V21.2273H13.6347Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_10_466)">
+</g>
+</g>
+</svg>
