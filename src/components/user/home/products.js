@@ -1,6 +1,7 @@
 import React from 'react';
 import FadeIn from '../../animations/Fadein';
 import CakeImage from '../../../assets/image_2.png';
+import { Link } from 'react-router-dom';
 
 function convertToVND(giaTri) {
     return giaTri.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
@@ -9,7 +10,8 @@ function convertToVND(giaTri) {
 class FeatureProduct extends React.Component {
     render(){
         return(
-            <div className='w-full flex flex-col text-lg font-bold p-16'>
+            <a href='/product-detail'>
+                <div className='w-full flex flex-col text-lg font-bold p-16'>
                 <div className='my-4 text-[#69432B]'>
                     Featured Product
                 </div>
@@ -128,6 +130,8 @@ class FeatureProduct extends React.Component {
                     </div>
                 </div>
             </div>
+            </a>
+            
         );
     }
 }
