@@ -2,6 +2,10 @@ import React from 'react';
 import banner from '../assets/aboutUs-1.png'
 import imgCenter from '../assets/aboutUs-2.png'
 import imgQuest from '../assets/aboutUs-3.png'
+import aboutUS4 from '../assets/aboutUs-4.png'
+import aboutUS5 from '../assets/aboutUs-5.png'
+import aboutUS6 from '../assets/aboutUs-6.png'
+import aboutUsCenter from '../assets/aboutUs-center.png'
 
 const aboutUs = () => {
   return (
@@ -16,7 +20,7 @@ const aboutUs = () => {
         <div className="text-center">
           <img className="w-auto block mx-auto" src={banner} alt='banner' />
         </div>
-        <div className="mt-44 mb-12 text-center">
+        <div className="mt-24 mb-12 text-center">
           <div className="w-80 h-10 block mx-auto">
             <div className="text-white text-3xl font-bold font-['Inter']">Our Success</div>
             <div className="text-white text-3xl font-normal font-['Inter']"> Numbers<br /></div>
@@ -24,7 +28,7 @@ const aboutUs = () => {
         </div>
         <div>
           <div className="flex justify-center text-center mt-9">
-            <div class="flex justify-center bg-orange-400 h-auto w-fit rounded-lg">
+            <div class="flex justify-center bg-orange-400 h-auto w-fit rounded-2xl">
               <div className="flex justify-center py-7 px-32">
                 <div class="flex flex-col justify-center mr-24">
                   <div id="content" className="flex justify-center mb-3">
@@ -67,7 +71,19 @@ const aboutUs = () => {
           </div>
         </div>
       </section>
+
+
+
       <section className="mt-10 bg-center p-10">
+        <div className="h-1 flex justify-start">
+          <div><img className="-translate-x-48 -translate-y-80 rotate-12" src={aboutUS4} alt='banner' /></div>
+        </div>
+        <div className="h-1 flex justify-end">
+          <div><img className="-translate-y-96 translate-x-10" src={aboutUS5} alt='banner' /></div>
+        </div>
+        <div className="h-1 flex justify-end">
+          <div><img className="-translate-y-64 translate-x-10" src={aboutUS6} alt='banner' /></div>
+        </div>
         <div className="w-32 h-28 ml-24">
           <div className="w-24 h-px absolute border-2 border-red-300"></div>
           <div className="absolute mt-3">
@@ -75,49 +91,65 @@ const aboutUs = () => {
             <div className="text-yellow-900 text-2xl font-bold font-['Inter']">Vision<br /></div></div>
         </div>
 
-        <img class="z-0" src={imgCenter} alt='cake' />
+        <div className="flex justify-center">
+          <img className="" src={aboutUsCenter} alt='cake' />
+        </div>
 
-        <div className="flex justify-start">
-          <div className="flex justify-center w-fit bg-orange-100 rounded-lg transform translate-x-20">
-            <div className="flex flex-col w-80 m-2 justify-center">
-              <div className="flex items-center">
-                <div className="content-center mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="54" height="53" viewBox="0 0 54 53" fill="none">
-                    <g>
-                      <rect width="53.9966" height="52.3041" rx="10" transform="matrix(-1 0 0 1 53.9966 0)" fill="#FFBF96" />
-                    </g>
-                    <path d="M27.8172 37.9C34.5016 37.9 39.9202 32.3484 39.9202 25.5C39.9202 18.6517 34.5016 13.1 27.8172 13.1C21.1329 13.1 15.7142 18.6517 15.7142 25.5C15.7142 32.3484 21.1329 37.9 27.8172 37.9ZM27.8172 41C19.4618 41 12.6885 34.0603 12.6885 25.5C12.6885 16.9396 19.4618 10 27.8172 10C36.1725 10 42.946 16.9396 42.946 25.5C42.946 34.0603 36.1725 41 27.8172 41ZM27.8172 31.7C31.1593 31.7 33.8687 28.9241 33.8687 25.5C33.8687 22.0758 31.1593 19.3 27.8172 19.3C24.4751 19.3 21.7657 22.0758 21.7657 25.5C21.7657 28.9241 24.4751 31.7 27.8172 31.7ZM27.8172 34.8C22.804 34.8 18.74 30.6362 18.74 25.5C18.74 20.3637 22.804 16.2 27.8172 16.2C32.8304 16.2 36.8945 20.3637 36.8945 25.5C36.8945 30.6362 32.8304 34.8 27.8172 34.8ZM27.8172 28.6C26.1461 28.6 24.7915 27.2121 24.7915 25.5C24.7915 23.7879 26.1461 22.4 27.8172 22.4C29.4883 22.4 30.843 23.7879 30.843 25.5C30.843 27.2121 29.4883 28.6 27.8172 28.6Z" fill="#69432B" />
-                  </svg>
+        {/* <div className="flex flex-row">
+          <div className="flex justify-start">
+            <div className="flex justify-center w-fit h-fit bg-orange-100 rounded-lg transform translate-x-20">
+              <div className="flex flex-col w-80 m-2 justify-center">
+                <div className="flex items-center">
+                  <div className="content-center mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="53" viewBox="0 0 54 53" fill="none">
+                      <g>
+                        <rect width="53.9966" height="52.3041" rx="10" transform="matrix(-1 0 0 1 53.9966 0)" fill="#FFBF96" />
+                      </g>
+                      <path d="M27.8172 37.9C34.5016 37.9 39.9202 32.3484 39.9202 25.5C39.9202 18.6517 34.5016 13.1 27.8172 13.1C21.1329 13.1 15.7142 18.6517 15.7142 25.5C15.7142 32.3484 21.1329 37.9 27.8172 37.9ZM27.8172 41C19.4618 41 12.6885 34.0603 12.6885 25.5C12.6885 16.9396 19.4618 10 27.8172 10C36.1725 10 42.946 16.9396 42.946 25.5C42.946 34.0603 36.1725 41 27.8172 41ZM27.8172 31.7C31.1593 31.7 33.8687 28.9241 33.8687 25.5C33.8687 22.0758 31.1593 19.3 27.8172 19.3C24.4751 19.3 21.7657 22.0758 21.7657 25.5C21.7657 28.9241 24.4751 31.7 27.8172 31.7ZM27.8172 34.8C22.804 34.8 18.74 30.6362 18.74 25.5C18.74 20.3637 22.804 16.2 27.8172 16.2C32.8304 16.2 36.8945 20.3637 36.8945 25.5C36.8945 30.6362 32.8304 34.8 27.8172 34.8ZM27.8172 28.6C26.1461 28.6 24.7915 27.2121 24.7915 25.5C24.7915 23.7879 26.1461 22.4 27.8172 22.4C29.4883 22.4 30.843 23.7879 30.843 25.5C30.843 27.2121 29.4883 28.6 27.8172 28.6Z" fill="#69432B" />
+                    </svg>
+                  </div>
+                  <div className="flex flex-row justify-center text-center text-yellow-900 text-2xl font-semibold font-['Inter']">Reach the goals<br /></div>
                 </div>
-                <div className="flex flex-row justify-center text-center text-yellow-900 text-2xl font-semibold font-['Inter']">Reach the goals<br /></div>
+                <div>
+                  <div className="mt-4 text-justify text-neutral-600 text-base font-normal font-['Inter']">Throughout your journey, our service provides unwavering support, offering personalized guidance to help you efficiently reach your goals. By prioritizing your well-being and fostering self-confidence, we are dedicated to ensuring your success.</div>
+                </div>
               </div>
-              <div>
-                <div className="mt-4 text-justify text-neutral-600 text-base font-normal font-['Inter']">Throughout your journey, our service provides unwavering support, offering personalized guidance to help you efficiently reach your goals. By prioritizing your well-being and fostering self-confidence, we are dedicated to ensuring your success.</div>
+            </div>
+          </div>
+
+          <div className="flex justify-center -translate-x-24 -translate-y">
+            <div className="z-30 translate-x-72">
+              <img class="w-[380px]" src={imgCenter} alt='cake' />
+            </div>
+
+            <div className="z-20 -translate-x-8 translate-y-16 bg-orange-300 w-48 h-48 rounded-xl">
+            </div>
+
+            <div className="z-10 -translate-x-36 bg-orange-100 w-60 h-60 rounded-xl">
+            </div>
+          </div>
+
+          <div className="flex justify-end translate-y-24">
+            <div className="flex justify-center w-fit h-fit bg-orange-100 rounded-lg">
+              <div className="flex flex-col w-80 m-2 justify-center">
+                <div className="flex items-center">
+                  <div className="content-center mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
+                      <g>
+                        <rect width="51.7546" height="52.3041" rx="10" transform="matrix(-1 0 0 1 51.7546 0)" fill="#FFBF96" />
+                      </g>
+                      <path d="M26.6619 39C19.6868 39 14.0323 32.9558 14.0323 25.5C14.0323 18.0442 19.6868 12 26.6619 12C33.6369 12 39.2914 18.0442 39.2914 25.5C39.2914 32.9558 33.6369 39 26.6619 39ZM26.6619 36.3C32.242 36.3 36.7655 31.4647 36.7655 25.5C36.7655 19.5353 32.242 14.7 26.6619 14.7C21.0818 14.7 16.5583 19.5353 16.5583 25.5C16.5583 31.4647 21.0818 36.3 26.6619 36.3ZM27.9249 25.5H32.9767V28.2H25.3989V18.75H27.9249V25.5Z" fill="#69432B" />
+                    </svg>
+                  </div>
+                  <div className="flex flex-row justify-center text-center text-yellow-900 text-2xl font-semibold font-['Inter']">Save time<br /></div>
+                </div>
+                <div>
+                  <div className="mt-4 text-justify text-neutral-600 text-base font-normal font-['Inter']">We take care of the entire process, from meal preparation to packaging and doorstep delivery, allowing you to save both time and money. This way, you can dedicate more precious moments to your loved ones.</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex justify-end">
-          <div className="flex justify-center w-fit bg-orange-100 rounded-lg">
-            <div className="flex flex-col w-80 m-2 justify-center">
-              <div className="flex items-center">
-                <div className="content-center mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
-                    <g>
-                      <rect width="51.7546" height="52.3041" rx="10" transform="matrix(-1 0 0 1 51.7546 0)" fill="#FFBF96" />
-                    </g>
-                    <path d="M26.6619 39C19.6868 39 14.0323 32.9558 14.0323 25.5C14.0323 18.0442 19.6868 12 26.6619 12C33.6369 12 39.2914 18.0442 39.2914 25.5C39.2914 32.9558 33.6369 39 26.6619 39ZM26.6619 36.3C32.242 36.3 36.7655 31.4647 36.7655 25.5C36.7655 19.5353 32.242 14.7 26.6619 14.7C21.0818 14.7 16.5583 19.5353 16.5583 25.5C16.5583 31.4647 21.0818 36.3 26.6619 36.3ZM27.9249 25.5H32.9767V28.2H25.3989V18.75H27.9249V25.5Z" fill="#69432B" />
-                  </svg>
-                </div>
-                <div className="flex flex-row justify-center text-center text-yellow-900 text-2xl font-semibold font-['Inter']">Save time<br /></div>
-              </div>
-              <div>
-                <div className="mt-4 text-justify text-neutral-600 text-base font-normal font-['Inter']">We take care of the entire process, from meal preparation to packaging and doorstep delivery, allowing you to save both time and money. This way, you can dedicate more precious moments to your loved ones.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="flex justify-center">
           <div className="flex justify-center w-fit bg-orange-100 rounded-lg">
             <div className="flex flex-col w-80 m-2 justify-center">
@@ -143,7 +175,7 @@ const aboutUs = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       <section class="mt-10 p-10">
@@ -182,6 +214,73 @@ const aboutUs = () => {
 
           </div>
 
+        </div>
+      </section>
+
+      <section class="mt-10 p-10">
+        <div className="w-32 h-28 ml-24">
+          <div className="w-24 h-px absolute border-2 border-red-300"></div>
+          <div className="absolute mt-3">
+            <div className="text-yellow-900 text-2xl font-normal font-['Inter']">Our<br /></div>
+            <div className="text-yellow-900 text-2xl font-bold font-['Inter']">Our Differentials<br /></div></div>
+        </div>
+        <div className="flex flex-row px-10 ml-24 justify-start">
+          <div className="flex flex-col h-[650px] bg-orange-100 rounded-2xl">
+            <div className="my-4 mx-9 w-80">
+              <div className="w-9 h-9 bg-orange-300 flex justify-center items-center rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 7L12.6154 14.5L9.53846 11.375L4 17" stroke="#69432B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M20 13V7H14" stroke="#69432B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div className="mt-2">
+                <div className="w-96"><div className="text-stone-800 text-2xl font-bold font-['Inter']">Innovative</div>
+                  <div className="text-yellow-900 text-2xl font-bold font-['Inter']">Cake Design</div>
+                </div>
+              </div>
+              <div className="w-80 h-px absolute border-2 border-orange-300 mt-4">
+                <div className="w-80 mt-4 text-justify text-zinc-500 text-lg font-normal font-['Inter'] leading-tight">Unique Shapes and Decorations: Elevate your bakery's visual identity by masterfully crafting cakes with imaginative shapes and artistic decorations. From intricate fondant sculptures to avant-garde geometric designs, the emphasis is on pushing creative boundaries to create edible works of art that leave a lasting impression.<br />Exclusive or Seasonal Products: Unleash the allure of exclusivity by offering limited-edition or seasonal baked goods. Whether it's a tantalizing flavor inspired by the latest culinary trends or a visually stunning cake designed for a specific celebration, these exclusive offerings not only generate buzz but also instill a sense of anticipation among your clientele.</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col h-[650px] bg-orange-100 rounded-2xl mx-10">
+            <div className="my-4 mx-9 w-80">
+              <div className="w-9 h-9 bg-orange-300 flex justify-center items-center rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 21C4 18.2386 7.58172 16 12 16C16.4183 16 20 18.2386 20 21" stroke="#69432B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12 13C14.7614 13 17 10.7614 17 8C17 5.23858 14.7614 3 12 3C9.23858 3 7 5.23858 7 8C7 10.7614 9.23858 13 12 13Z" stroke="#69432B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div className="mt-2">
+                <div className="w-96"><div className="text-stone-800 text-2xl font-bold font-['Inter']">Special</div>
+                  <div className="text-yellow-900 text-2xl font-bold font-['Inter']">Customer Experience</div>
+                </div>
+              </div>
+              <div className="w-80 h-px absolute border-2 border-orange-300 mt-4">
+                <div className="w-80 mt-4 text-justify text-zinc-500 text-lg font-normal font-['Inter'] leading-tight">Attentive Service and Effective Communication: Beyond the delectable treats, cultivate an atmosphere of warmth and hospitality. Ensure that every customer interaction is marked by attentive service, from personalized recommendations to swift issue resolution. Clear and effective communication enhances the overall experience, making patrons feel valued and heard.<br />Customer Understanding: Forge a deeper connection with your customer base by actively seeking to understand their preferences. Regularly collect feedback, adapt to evolving tastes, and tailor your offerings to align with their desires. This customer-centric approach not only fosters loyalty but also positions your bakery as a trusted ally in their culinary journey.</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col h-[650px] bg-orange-100 rounded-2xl">
+            <div className="my-4 mx-9 w-80">
+              <div className="w-9 h-9 bg-orange-300 flex justify-center items-center rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 21C4 18.2386 7.58172 16 12 16C16.4183 16 20 18.2386 20 21" stroke="#69432B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12 13C14.7614 13 17 10.7614 17 8C17 5.23858 14.7614 3 12 3C9.23858 3 7 5.23858 7 8C7 10.7614 9.23858 13 12 13Z" stroke="#69432B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div className="mt-2">
+                <div className="w-96"><div className="text-stone-800 text-2xl font-bold font-['Inter']">Special</div>
+                  <div className="text-yellow-900 text-2xl font-bold font-['Inter']">Customer Experience</div>
+                </div>
+              </div>
+              <div className="w-80 h-px absolute border-2 border-orange-300 mt-4">
+                <div className="w-80 mt-4 text-justify text-zinc-500 text-lg font-normal font-['Inter'] leading-tight">Use of High-Quality Ingredients: Elevate the essence of indulgence by incorporating only the finest, premium-quality ingredients. Communicate the source and quality of your raw materials, emphasizing the superior taste and nutritional value of your products. This commitment to excellence reinforces your bakery's dedication to delivering an unparalleled gastronomic experience.<br />Specialized or Traditional Production Processes: Unveil the artisanal craftsmanship behind your baked goods by highlighting specialized or traditional production methods. Whether it's time-honored techniques passed down through generations or innovative processes that set you apart, sharing the story behind your creations fosters transparency, trust, and a deeper appreciation for the artistry embedded in every confection.</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
