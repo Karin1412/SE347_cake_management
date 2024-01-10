@@ -6,10 +6,12 @@ import aboutUS4 from '../assets/aboutUs-4.png'
 import aboutUS5 from '../assets/aboutUs-5.png'
 import aboutUS6 from '../assets/aboutUs-6.png'
 import aboutUsCenter from '../assets/aboutUs-center.png'
+import NavBar from '../components/admin/navbar';
 
 const aboutUs = () => {
   return (
-    <div>
+    <div className=''>
+      <NavBar />
       <section className='bg-gradient-to-b from-white to-orange-300 p-10'>
         <div className="w-32 h-28 ml-24">
           <div className="w-24 h-px absolute border-2 border-red-300"></div>
