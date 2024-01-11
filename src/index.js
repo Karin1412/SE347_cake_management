@@ -8,6 +8,7 @@ import ProductDetail from './views/productDetail';
 import AboutUs from './views/aboutUs'
 import Home from './views/home'
 import Cart from './views/cartview'
+import Payment from './views/payment'
 import NavBar from './components/productDetails/navbar';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
         <Route path="/home" element={<Home/>}></Route>
         <Route path="/sign-up" element={<Signup/>}></Route>
         <Route path="/cart" element={<Cart/>}></Route>
+        <Route path="/payment" element={<Payment/>}></Route>
         <Route path="/product-detail" element={<ProductDetail/>}></Route>
         <Route path='/nav-bar' element={<NavBar/>}></Route>
       </Routes>

@@ -1,12 +1,12 @@
 import NavBar from "../components/productDetails/navbar";
-import Cart from "../components/cartPayment/cart";
+import Payment from "../components/cartPayment/payment";
 import Footer from "../components/productDetails/footer";
 function App() {
   return (
     <div>
         <div className='w-screen h-screen'>
           <NavBar />
-          <Cart />
+          <Payment />
           <Footer />
         </div>
         
