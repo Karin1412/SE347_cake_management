@@ -4,7 +4,7 @@ import NavBar from "../components/productDetails/navbar";
 import Footer from "../components/productDetails/footer";
 import CakeImage from "../assets/cake.png";
 import { products } from '../components/categories/data';
-
+import '../styles/categories/categories.css'
 function convertToVND(giaTri) {
   return giaTri.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
 }
@@ -22,7 +22,7 @@ function Category() {
   const allOption = "All";
   const uniqueCategories = [allOption, ...new Set(products.map(product => product.ctg))];
   const [category, setCategory] = useState(allOption);
-  const [price, setPrice] = useState(100000);
+  const [price, setPrice] = useState(400000);
   const [reviewCount, setReviewCount] = useState(0);
   const [averageRating, setAverageRating] = useState(0.0);
   const [productName, setProductName] = useState('');
@@ -54,13 +54,17 @@ function Category() {
   };
 
   const handleFilterSubmit = () => {
-    let filtered
+    let filtered;
     if (category === allOption) {
       // If "All" is selected, show all products without filtering by category
-      filtered = products;
-    }
-    else 
-    {
+      filtered = products.filter(
+        (product) =>
+          product.price <= price &&
+          product.reviews >= reviewCount &&
+          product.rating >= averageRating &&
+          product.title.toLowerCase().includes(productName.toLowerCase())
+      );
+    } else {
       filtered = products.filter(
         (product) =>
           product.ctg === category &&
@@ -70,15 +74,16 @@ function Category() {
           product.title.toLowerCase().includes(productName.toLowerCase())
       );
     }
-
+  
     if (sortOrder === 'asc') {
       filtered = filtered.sort((a, b) => a.price - b.price);
     } else {
       filtered = filtered.sort((a, b) => b.price - a.price);
     }
-
+    console.log("Filtered Products:", filtered);
     setFilteredProducts(filtered);
   };
+  
 
   const handleRandomProducts = () => {
     const shuffled = shuffleArray(filteredProducts);
@@ -88,27 +93,29 @@ function Category() {
   return (
     <div className='w-screen h-screen flex flex-col'>
       <NavBar />
-      <div className="w-full h-auto flex flex-row">
-        <div className="filter w-1/4 h-full flex flex-col px-[3%] py-[1%]">
+      <div className="w-full h-auto flex md:flex-row flex-col">
+        <div className="filter w-full md:w-1/4 h-auto flex flex-col px-[3%] py-[1%]">
           <div className="w-[80%] h-[50px] text-[#69432B] text-2xl font-medium border-4 border-[#ffffff] border-b-[#69432B]">Filters</div>
           <div className="py-[20px] w-full h-auto border-4 border-[#ffffff] border-b-[#69432B]">
             <div className="text-xl text-[#69432B] font-medium mb-2">PRODUCT CATEGORY</div>
             <div className="flex flex-col">
-              {uniqueCategories.map(cat => (
-                <div key={cat} className="flex items-center">
-                  <input
-                    type="radio"
-                    className="mr-2 bg-blue-50 checked:bg-[#69432B]"
-                    id={cat}
-                    name="Cakes"
-                    value={cat}
-                    checked={category === cat}
-                    onChange={handleCategoryChange}
-                  />
-                  <Label className="text-lg font-normal" htmlFor={cat}>{cat}</Label>
-                  <div className="ml-2 text-sm">({filteredProducts.filter(product => product.ctg === cat).length})</div>
+            {uniqueCategories.map(cat => (
+              <div key={cat} className="flex items-center">
+                <input
+                  type="radio"
+                  className="mr-2 bg-blue-50 checked:bg-[#69432B]"
+                  id={cat}
+                  name="Cakes"
+                  value={cat}
+                  checked={category === cat}
+                  onChange={handleCategoryChange}
+                />
+                <Label className="text-lg font-normal" htmlFor={cat}>{cat}</Label>
+                <div className="ml-2 text-sm">
+                  {`(${filteredProducts.filter(product => product.price <= price && (cat === allOption || product.ctg === cat)).length})`}
                 </div>
-              ))}
+              </div>
+            ))}
             </div>
           </div>
           <div className="flex flex-col">
@@ -116,16 +123,17 @@ function Category() {
               Filter By Price:
             </label>
             <div className="flex justify-center w-full">
-              <input
-                type="range"
-                id="price-range"
-                min="0"
-                max="400000"
-                step="10000"
-                value={price}
-                onChange={handlePriceChange}
-                className="transparent h-2 w-full rounded-lg bg-neutral-200 cursor-pointer appearance-none "
-              />
+            <input
+              type="range"
+              id="price-range"
+              min="0"
+              max="400000"
+              step="10000"
+              value={price}
+              onChange={handlePriceChange}
+              className="transparent h-2 w-full rounded-lg bg-neutral-200 cursor-pointer appearance-none thumb-color-69432B"
+            />
+
             </div>
             <span className="mt-2 text-xl font-medium text-[#69432B] text-center">{convertToVND(price)}</span>
           </div>
@@ -183,8 +191,8 @@ function Category() {
           </button>
         </div>
         <div className='w-3/4 h-auto flex flex-col text-lg font-bold flex-grow min-h-[90vh]'>
-          <div className='my-4 text-[#69432B]'>
-            Featured Product
+          <div className='h-[50px] mt-4 text-[#69432B] text-2xl font-medium border-4 border-[#ffffff] border-b-[#69432B] w-[40%]'>
+            Shop
           </div>
           <div className='flex flex-row w-full h-auto flex-wrap justify-start p-10'>
             {filteredProducts.map(product => (
@@ -197,7 +205,7 @@ function Category() {
                   </div>
                 </div>
                 <div className='divide-x-2 flex flex-row items-center justify-center'>
-                  <div className='flex items-center justify-center'>
+                  <div className='flex items-center justify-center h-full'>
                     <svg className="h-6 w-6 shrink-0 fill-amber-400" viewBox="0 0 256 256">
                       <path
                         d="M239.2 97.4A16.4 16.4.0 00224.6 86l-59.4-4.1-22-55.5A16.4 16.4.0 00128 16h0a16.4 16.4.0 00-15.2 10.4L90.4 82.2 31.4 86A16.5 16.5.0 0016.8 97.4 16.8 16.8.0 0022 115.5l45.4 38.4L53.9 207a18.5 18.5.0 007 19.6 18 18 0 0020.1.6l46.9-29.7h.2l50.5 31.9a16.1 16.1.0 008.7 2.6 16.5 16.5.0 0015.8-20.8l-14.3-58.1L234 115.5A16.8 16.8.0 00239.2 97.4z">
@@ -205,12 +213,12 @@ function Category() {
                     </svg>
                     <span className='font-semibold text-xs ml-2 mr-2' > { product.rating }/5</span>
                   </div>
-                  <div className='items-center text-center'>
+                  <div className='flex items-center justify-center h-full'>
                     <span className='font-semibold text-xs ml-2' >{ product.reviews }</span>
                     <span className='text-[#FF915D] text-xs ml-2 mr-1' >Reviews</span>
                   </div>
                 </div>
-                <button className='mt-4 w-[50%] bg-[#69432B] text-center text-white font-medium text-[17px] px-4 py-2 rounded-lg'>
+                <button className='mt-4 w-[50%] bg-[#69432B] text-center text-white font-medium text-[12px] px-4 py-2 rounded-lg'>
                   Add to Cart
                 </button>
               </div>
