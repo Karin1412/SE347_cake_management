@@ -1,7 +1,8 @@
-import NavBar from "./components/productDetails/navbar";
-import Intro from "./components/home/Intro";
-import Products from "./components/home/products";
-import Story from "./components/home/story";
+import NavBar from "../components/productDetails/navbar";
+import Intro from "../components/user/home/Intro";
+import Products from "../components/user/home/products"
+import Story from "../components/user/home/story";
+import Footer from "../components/user/footer"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <div className="">
           <Products />
           <Story />
+          <Footer />
         </div>
     </div>
     

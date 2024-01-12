@@ -13,7 +13,7 @@ class Footer extends React.Component {
             <div className="w-screen bg-[#ffdec9] divide-y divide-[#d7b4a4] ">
                 <div className="w-full flex flex-row justify-around items-center">
                     <div className='flex pl-[4%] w-1/12'><img src={Logo} alt=''></img></div>
-                    <div className="flex w-full h-[30%] justify-evenly text-[#69432b] font-serif text-xl">
+                    <div className="flex w-full  justify-evenly text-[#69432b] font-serif text-xl">
                         <button className='nav-button'>Home</button>
                         <button className='nav-button'>Categories</button>
                         <button className='nav-button'>About us</button>
