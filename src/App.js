@@ -14,7 +14,7 @@ function App() {
           <Products />
           <Story />
         </div>
-        <div>
+        <div className="w-full flex">
           <Footer />
         </div>
     </div>
