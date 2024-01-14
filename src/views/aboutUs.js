@@ -2,10 +2,12 @@ import React from 'react';
 import banner from '../assets/aboutUs-1.png'
 import imgCenter from '../assets/aboutUs-2.png'
 import imgQuest from '../assets/aboutUs-3.png'
+import FadeIn from '../components/animations/Fadein';
 
 const aboutUs = () => {
   return (
-    <div>
+    <FadeIn delay={0.2} direction="down">
+          <div>
       <section className='bg-gradient-to-b from-white to-orange-300 p-10'>
         <div className="w-32 h-28 ml-24">
           <div className="w-24 h-px absolute border-2 border-red-300"></div>
@@ -67,6 +69,7 @@ const aboutUs = () => {
           </div>
         </div>
       </section>
+      <FadeIn delay={0.4} direction="down">
       <section className="mt-10 bg-center p-10">
         <div className="w-32 h-28 ml-24">
           <div className="w-24 h-px absolute border-2 border-red-300"></div>
@@ -145,7 +148,8 @@ const aboutUs = () => {
           </div>
         </div>
       </section>
-
+      </FadeIn>
+      <FadeIn delay={0.4} direction="down">
       <section class="mt-10 p-10">
         <div className="w-32 h-28 ml-24">
           <div className="w-24 h-px absolute border-2 border-red-300"></div>
@@ -184,7 +188,12 @@ const aboutUs = () => {
 
         </div>
       </section>
+      </FadeIn>
+
+      
     </div>
+    </FadeIn>
+
   );
 };
 
