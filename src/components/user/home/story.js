@@ -51,7 +51,7 @@ class Story extends React.Component {
                 <div id="default-carousel" class="relative w-full" data-carousel="slide">
                 <div id='quote_screen' class="relative h-56 overflow-hidden rounded-lg md:h-96 "> 
                     
-                    <div class="hidden duration-700 ease-in-out flex justify-center items-center flex-col space-y-[2%] " data-carousel-item>
+                    <div class="duration-700 ease-in-out flex justify-center items-center flex-col space-y-[2%] " data-carousel-item>
                         <div class="items-center w-16 h-[22px] px-2 py-0.5 bg-orange-100 rounded-[36px] shadow justify-center gap-0.5 text-center">
                             <div class="text-yellow-900 text-xs font-medium font-['Poppins'] leading-[18px]">QUOTES</div>
                         </div>

@@ -10,12 +10,11 @@ function App() {
         <div className='w-screen h-screen'>
           <NavBar />
           <Intro />
-        </div>
-        <div className="">
           <Products />
           <Story />
           <Footer />
         </div>
+        
     </div>
     
   );
