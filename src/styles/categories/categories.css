@@ -1,0 +1,12 @@
+/* styles.css */
+.thumb-color-69432B::-webkit-slider-thumb {
+  background-color: #69432B !important;
+}
+
+.thumb-color-69432B::-moz-range-thumb {
+  background-color: #69432B !important;
+}
+
+.thumb-color-69432B::-ms-thumb {
+  background-color: #69432B !important;
+}
