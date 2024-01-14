@@ -80,5 +80,116 @@ export const commentsData = [
     content: "The article covers the essentials, challenges, myths and stages the UX designer should consider while creating the design strategy.",
     rating: 5,
   },
+  {
+    id: 4,
+    author: "Bonn Green",
+    avatar: "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
+    date: "Mar. 12, 2023",
+    content: "The article covers the essentials, challenges, myths and stages the UX designer should consider while creating the design strategy.",
+    rating: 5,
+  },
+  {
+    id: 5,
+    author: "Bonnie F Green",
+    avatar: "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
+    date: "Mar. 12, 2012",
+    content: "The article covers the essentials, challenges, myths and stages the UX designer should consider while creating the design strategy.",
+    rating: 5,
+  },
+  {
+    id: 6,
+    author: "Bonnie B Green",
+    avatar: "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
+    date: "Mar. 11, 2022",
+    content: "The article covers the essentials, challenges, myths and stages the UX designer should consider while creating the design strategy.",
+    rating: 5,
+  },
+  {
+    id: 7,
+    author: "Bonnie A Green",
+    avatar: "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
+    date: "Feb. 12, 2022",
+    content: "The article covers the essentials, challenges, myths and stages the UX designer should consider while creating the design strategy.",
+    rating: 5,
+  },
   // Thêm comment khác nếu cần
 ];
+
+// data.js
+
+export const articles = [
+  {
+    id: 1,
+    title: "Tiêu đề bdsdsài viếtsdsdd 1",
+    content: "Nội dung bài viết 1...",
+    author: "Người viết 1",
+    date: "2023-01-01",
+  },
+  {
+    id: 2,
+    title: "Tiêu dsdđề bsdsài viếtsdsd 2",
+    content: "Nội dung bài viết 2...",
+    author: "Người viết 2",
+    date: "2023-02-15",
+  },
+  {
+    id: 3,
+    title: "Tiêu đề bàsdsdsi viếsddsdt 3",
+    content: "Nội dung bài viết 3...",
+    author: "Người viết 3",
+    date: "2023-05-20",
+  },
+  {
+    id: 4,
+    title: "Tisdsdsêu đề bàisdsds viếtsdsdsa 4",
+    content: "Nội dung bài viết 4...",
+    author: "Người viết 4",
+    date: "2023-07-20",
+  },
+  {
+    id: 5,
+    title: " đề bài viết 3",
+    content: "Nội dung bài viết 3...",
+    author: "Người viết 3",
+    date: "2021-05-20",
+  },
+  {
+    id: 6,
+    title: "Tiêu đề bài dbshdbhvfgcdsvc vc cdgdgffffffffffffffffffffrfvffffffffffffffffffffffffffffffcsgcc viết 6",
+    content: "Nội dung bài viết 3...",
+    author: "Người viết 3",
+    date: "2023-12-20",
+  },
+  {
+    id: 7,
+    title: "Tiêu đasdề bdsdài vcxcdssdsddiết 7",
+    content: "Nội dung bài viết 3...",
+    author: "Người viết 3",
+    date: "2023-11-20",
+  },
+  // Thêm các bài viết khác tại đây
+];
+
+export const question = [
+{
+  id: 1,
+  ques: "[Scam warning] Shop safety with us",
+  ans: "I dont know how to solve it",
+  rating: 1,
+  date: "2023-12-3"
+}, 
+{
+  id: 2,
+  ques: "[Service] How to slap cashier?",
+  ans: "Just slap him/her",
+  rating: 4,
+  date: "2023-3-3"
+},
+{
+  id: 3,
+  ques: "[Service] I hate my boyfriend, what should I do?",
+  ans: "I hate him, too",
+  rating: 5,
+  date: "2023-5-3"
+},  
+]

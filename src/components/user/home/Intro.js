@@ -102,8 +102,8 @@ class Intro extends React.Component {
                             </FadeIn>
                             <FadeIn delay={0.2} direction="right">
                                 <div className='flex flex-row my-5'>
-                                    <button type="button" className="text-white bg-[#69432B] hover:bg-[#b67b56] focus:ring-4 focus:ring-[#ffaf7d] font-medium rounded-lg text-xl px-8 py-2.5 me-2 mb-2 mr-4">Order Now</button>
-                                    <button type="button" className="text-[#b67b56] border border-[#b67b56] bg-[#ffffff] hover:bg-[#b67b56] focus:ring-4 focus:ring-[#b67b56] font-medium rounded-lg text-xl px-8 py-2.5 me-2 mb-2 ml-4">See All Menus</button>
+                                    <button type="button" className="text-[#69432b] border border-[#69432b] bg-[#ffffff] hover:bg-[#69432b] hover:text-[#ffffff] font-medium rounded-lg text-xl px-8 py-2.5 me-2 mb-2 mr-4">Order Now</button>
+                                    <button type="button" className="text-[#69432b] border border-[#69432b] bg-[#ffffff] hover:bg-[#69432b] hover:text-[#ffffff] font-medium rounded-lg text-xl px-8 py-2.5 me-2 mb-2 ml-4">See All Menus</button>
                                 </div>
                             </FadeIn>
                         </div>
