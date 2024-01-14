@@ -1,0 +1,51 @@
+/* Thêm vào file CSS hoặc cùng một file với component */
+.remove-image-button {
+  background-color: #e53e3e;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.remove-image-button:hover {
+  background-color: #c53030;
+}
+
+.image-container {
+  position: relative;
+  margin-right: 10px;
+}
+
+.preview-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+/* Thêm vào file CSS hoặc cùng một file với component */
+.dropzone {
+  border: 2px dashed #cccccc;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.image-preview {
+  display: flex;
+  margin-top: 10px;
+}
+
+.preview-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 4px;
+}

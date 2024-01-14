@@ -9,6 +9,11 @@ import AboutUs from './views/aboutUs'
 import Home from './views/home'
 import Cart from './views/cartview'
 import NavBar from './components/productDetails/navbar';
+import HomeAd from './pages/admin/home';
+import ProductManagement from './pages/admin/productManagement/productManagement';
+import OrderManagementPage from './pages/admin/order/orderManagement';
+import CategoryManagementPage from './pages/admin/productManagement/categoryPage';
+import ProductInputPage from './pages/admin/productManagement/productInputPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -22,6 +27,11 @@ root.render(
         <Route path="/cart" element={<Cart/>}></Route>
         <Route path="/product-detail" element={<ProductDetail/>}></Route>
         <Route path='/nav-bar' element={<NavBar/>}></Route>
+        <Route path="/home-ad" element={<HomeAd/>}></Route>
+        <Route path="/product-management" element={<ProductManagement/>}></Route>
+        <Route path='/order-ad' element={<OrderManagementPage/>}></Route>
+        <Route path='/category-management' element={<CategoryManagementPage/>}></Route>
+        <Route path='/product-input' element={<ProductInputPage/>}></Route>
       </Routes>
     </BrowserRouter>
     
