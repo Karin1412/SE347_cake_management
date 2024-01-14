@@ -179,7 +179,8 @@ const aboutUs = () => {
           </div>
         </div> */}
       </section>
-
+      </FadeIn>
+      <FadeIn delay={0.4} direction="down">
       <section class="mt-10 p-10">
         <div className="w-32 h-28 ml-24">
           <div className="w-24 h-px absolute border-2 border-orange-300"></div>
@@ -286,6 +287,8 @@ const aboutUs = () => {
         </div>
       </section>
     </div>
+    </FadeIn>
+
   );
 };
 
