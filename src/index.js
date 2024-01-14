@@ -10,6 +10,8 @@ import Home from './views/home'
 import Cart from './views/cartview'
 import Payment from './views/payment'
 import NavBar from './components/productDetails/navbar';
+import Category from './views/categories';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -19,6 +21,7 @@ root.render(
         <Route path="/" element={<Login/>}></Route>
         <Route path="/about-us" element={<AboutUs/>}></Route>
         <Route path="/home" element={<Home/>}></Route>
+        <Route path="/category" element={<Category/>}></Route>
         <Route path="/sign-up" element={<Signup/>}></Route>
         <Route path="/cart" element={<Cart/>}></Route>
         <Route path="/payment" element={<Payment/>}></Route>
@@ -29,4 +32,3 @@ root.render(
     
   </React.StrictMode>
 );
-
