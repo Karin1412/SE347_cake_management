@@ -1,21 +1,98 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import logo from '../../assets/logo.png'
+import logoSearch from '../../assets/Button.png'
+import logoShell from '../../assets/shell.png'
 
-const Navbar = () => {
-  return (
-    <nav className="bg-[#69432B] p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white font-bold text-xl">Admin Dashboard</div>
-        <div className="flex space-x-4">
-          <a href="/dashboard" className="text-white">Dashboard</a>
-          <a href="{/product-management}" className="text-white">Products</a>
-          <a href="{/order-ad}" className="text-white">Orders</a>
-          <a href="#" className="text-white">Reports</a>
-          <a href="/" className="text-white">Log out</a>
-          {/* Thêm các liên kết khác tại đây */}
-        </div>
-      </div>
-    </nav>
-  );
-};
+class NavBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentTime: this.getCurrentTime(),
+        };
+    }
 
-export default Navbar;
+    componentDidMount() {
+        // Cập nhật giờ mỗi giây
+        this.interval = setInterval(() => {
+            this.setState({
+                currentTime: this.getCurrentTime(),
+            });
+        }, 1000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
+    formatNumber(value) {
+        return value < 10 ? `0${value}` : `${value}`;
+    }
+
+    getCurrentTime() {
+        const now = new Date();
+        const hours = this.formatNumber(now.getHours());
+        const minutes = this.formatNumber(now.getMinutes());
+        const seconds = this.formatNumber(now.getSeconds());
+        return `${hours}:${minutes}:${seconds}`;
+    }
+
+    handleButtonClick() {
+        // Action
+        console.log('Button Clicked!');
+    }
+
+    handleClick = (myLink) => () => {
+        window.location.href = myLink;
+    }
+
+
+    render() {
+        return (
+            <div className="w-full bg-white">
+                {/* Notification */}
+                <div className='w-full text-center bg-[#654229] p-0.5 text-white space-x-4'>
+                    <div className='my-1'>
+                        <span>LIMITED OFFER: 30% OFF. Use RABBIT30 at Checkout.</span>
+                        <span className='font-medium ml-3'>{this.state.currentTime}</span>
+                    </div>
+                </div>
+
+                {/* Logo Search Account */}
+                <div className='w-full h-20 bg-[#ffffff] flex justify-around'>
+                    <div className='h-full'><img src={logo} alt='logo' className='h-full'></img></div>
+                    <div className='py-1.5 w-2/4 flex justify-center items-center'>
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            className='w-3/5 h-[72%] rounded-full border border-[#C8C9CB] p-2 mr-4 ml-[100px]'
+                            style={{ textIndent: '12px' }}
+                        />
+                        {/* <img src={logoSearch} alt='logoSearch' className='h-full'></img> */}
+                        {/* <button type="button" className='h-full bg-cover bg-no-repeat bg-[{logoSearch}]' onClick={() => this.handleButtonClick()}></button> */}
+                        <button type="button" className='h-[72%] w-[20%] bg-no-repeat' style={{ backgroundImage: `url(${logoSearch})`, backgroundSize: 'contain' }} onClick={() => this.handleButtonClick()}></button>
+                    </div>
+                    <div className='flex justify-end items-center space-x-3'>
+                        <div onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Your Account</div>
+                        <hr className='border-l border-[#C8C9CB] h-[50%]' />
+                        <img src={logoShell} alt='logoShell' className=''></img>
+                    </div>
+                </div>
+
+                {/* menu */}
+                <div className='w-full h-2/3 bg-[#ffffff] border-y border-y-stone-[#C8C9CB]'>
+                    <div className='flex justify-center'>
+                        <div className='w-full flex flex-row justify-between text-center my-2'>
+                            <div className='flex-1 text-lg' onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Home</div>
+                            <div className='flex-1 text-lg' onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Categories</div>
+                            <div className='flex-1 text-lg' onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>About us</div>
+                            <div className='flex-1 text-lg' onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Support</div>
+                            <div className='flex-1 text-lg' onClick={this.handleClick('https://www.facebook.com/')} style={{ cursor: 'pointer' }}>Contact us</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
+
+export default NavBar;
