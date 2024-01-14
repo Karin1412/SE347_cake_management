@@ -10,7 +10,9 @@ function convertToVND(giaTri) {
 class FeatureProduct extends React.Component {
     render(){
         return(
+            
             <a href='/product-detail'>
+                <FadeIn delay={0.2} direction="down">
                 <div className='w-full flex flex-col text-lg font-bold p-16'>
                 <div className='my-4 text-[#69432B]'>
                     Featured Product
@@ -130,6 +132,7 @@ class FeatureProduct extends React.Component {
                     </div>
                 </div>
             </div>
+            </FadeIn>
             </a>
             
         );
