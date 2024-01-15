@@ -1,0 +1,7 @@
+.title-container {
+    max-width: 20em; /* Đặt giới hạn chiều cao tối đa */
+    overflow: hidden; /* Hiệu ứng ẩn nếu quá chiều cao */
+    text-overflow: ellipsis; /* Hiển thị dấu elipsis (...) nếu bị ẩn */
+    white-space: nowrap; /* Ngăn chặn quá trình xuống dòng tự động */
+  }
+  
