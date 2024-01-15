@@ -8,6 +8,10 @@ import Debit from '../../assets/debit.png'
 import { couponCodes } from "../cartPayment/data";
 import { products } from "../cartPayment/data";
 
+function convertToVND(giaTri) {
+    return giaTri.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+}
+
 
 class Payment extends React.Component {
     constructor(props) {
@@ -357,7 +361,7 @@ class Payment extends React.Component {
                                 <p>{product.quantity}</p>
                             </div>
                             <div className='text-brown-new font-bold flex items-center absolute inset-y-0 right-0'>
-                                <p>${(product.price * (product.quantity || 1)).toFixed(2)}</p>
+                                <p>{convertToVND((product.price * (product.quantity || 1)))}</p>
                             </div>
                         </div>
                         <div class="border-t-2 border-light-new"></div>
@@ -365,16 +369,16 @@ class Payment extends React.Component {
                     ))}
                     <div class="flex justify-between pt-6">
                         <div class='text-brown-new'>Discount</div>
-                        <div class='text-brown-new font-bold'>${this.state.customer.cusDiscount}</div>
+                        <div class='text-brown-new font-bold'>{convertToVND(this.state.customer.cusDiscount)}</div>
                     </div>
                     <div class="flex justify-between pb-6">
                         <div class='text-brown-new'>Shipping Costs</div>
-                        <div class='text-brown-new font-bold'>${this.state.customer.cusShipping}</div>
+                        <div class='text-brown-new font-bold'>{convertToVND(this.state.customer.cusShipping)}</div>
                     </div>
                     <div class="border-t-2 border-light-new"></div>
                     <div class="flex justify-between pb-6 pt-6">
                         <div class='text-brown-new'>Total</div>
-                        <div class='text-brown-new font-bold'>${this.state.customer.cusTotal}</div>
+                        <div class='text-brown-new font-bold'>{convertToVND(this.state.customer.cusTotal)}</div>
                     </div>
                     <div class='relative pt-6'>
                         <button type="button" class="absolute inset-y-0 right-0 w-[40%] h-[48px] text-white bg-brown-new hover:bg-amber-950 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"

@@ -12,14 +12,18 @@ import paypal from '../../assets/paypal.png'
 import { useHistory } from 'react-router-dom';
 
 
+function convertToVND(giaTri) {
+    return giaTri.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+}
+
 class Cart extends React.Component {
     
     constructor(props) {
         super(props);
         const initialTotal = products.reduce((acc, product) => acc + product.price * product.quantity, 0);
         const counter = products.reduce((acc) => acc + 1, 0);
-        const defaultTotal = initialTotal <= 500 ? initialTotal + 50.00 : initialTotal;
-        const defaultCost = initialTotal > 500 ? "Free" : 50.00;
+        const defaultTotal = initialTotal <= 500000 ? initialTotal + 50000 : initialTotal;
+        const defaultCost = initialTotal > 500000 ? "Free" : 50000;
         this.state = {
             couponCode: '',
             subtotal: initialTotal,
@@ -74,11 +78,11 @@ class Cart extends React.Component {
         }, 0);
 
         // Cập nhật state với tổng giá mới
-        if (total <= 500) {
+        if (total <= 500000) {
             this.setState({
                 subtotal: total,
-                total: total + 50.00,
-                shippingCost: 50.00,
+                total: total + 50000,
+                shippingCost: 50000,
             });
         }
         else {
@@ -196,7 +200,7 @@ class Cart extends React.Component {
         const { total, subtotal, discount, shippingCost} = this.state;
 
         return(
-            <div class='flex justify-around pt-24'>
+            <div class='flex justify-around pt-24 flex-wrap'>
                 <div class='relative ml-[7.5%] basis-17/30'>
                     <div className='flex flex-row'>
                         <h2 class="text-brown-new mb-4 text-lg font-bold">Your Cart</h2>
@@ -205,42 +209,41 @@ class Cart extends React.Component {
                     <div class="border-t-2 border-brown-new"></div>
                     {this.state.products.map(product => (
                     <div className='flex flex-col'>
-                        <div className='relative flex flex-row w-full overflow-x-auto pt-6 pb-6' key={product.id}>
-                            <div className='w-[10%]'>
-                                <img class="border-solid border-2 rounded-md border-light-new" src={product.img} alt='Cake1'></img>
-                            </div>
-                            <div className='text-brown-new font-bold flex items-center w-[40%]'>
-                                <p>{product.name}</p>
-                            </div>
-                            <div className='w-[15%]'>
-                                <form>
-                                    <div class="relative flex items-center max-w-[8rem]">
-                                        <button type="button" id="decrement-button" data-input-counter-decrement={product.id} class="white p-4 h-11 text-brown-new"
-                                            onClick={() => this.handleQuantityChange(product.id, 'decrement')}>
-                                            <svg class="w-3 h-3 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
-                                            </svg>
-                                        </button>
-                                        <input type="text" id={product.id} data-input-counter data-input-counter-min="1" aria-describedby="helper-text-explanation" class="h-10 w-10 rounded-lg bg-[#f4f4f4] border-none text-brown-new" required
-                                        value={product.quantity || 1}/>
-                                        <button type="button" id="increment-button" data-input-counter-increment={product.id} class="white p-4 h-11 text-brown-new"
-                                            onClick={() => this.handleQuantityChange(product.id, 'increment')}>
-                                            <svg class="w-3 h-3 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div className='text-brown-new flex items-center w-[20%]'>
-                                <p>${product.price.toFixed(2)}</p>
-                            </div>
-                            <div className='text-brown-new font-bold flex items-center absolute inset-y-0 right-0'>
-                                <p>${(product.price * (product.quantity || 1)).toFixed(2)}</p>
-                            </div>
+                    <div className='relative flex flex-row w-full overflow-x-auto pt-6 pb-6' key={product.id}>
+                        <div className='w-[10%]'>
+                            <img class="border-solid border-2 rounded-md border-light-new" src={product.img} alt='Cake1'></img>
                         </div>
-                        <div class="border-t-2 border-light-new"></div>
-
+                        <div className='text-brown-new font-bold flex items-center w-[40%]'>
+                            <p>{product.name}</p>
+                        </div>
+                        <div className='w-[15%]'>
+                            <form>
+                                <div class="relative flex items-center w-[30%]">
+                                    <button type="button" id="decrement-button" data-input-counter-decrement={product.id} class="white p-4 h-11 text-brown-new"
+                                        onClick={() => this.handleQuantityChange(product.id, 'decrement')}>
+                                        <svg class="w-3 h-3 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
+                                        </svg>
+                                    </button>
+                                    <input type="text" id={product.id} data-input-counter data-input-counter-min="1" aria-describedby="helper-text-explanation" class="h-10 w-10 rounded-lg bg-[#f4f4f4] border-none text-brown-new" required
+                                    value={product.quantity || 1}/>
+                                    <button type="button" id="increment-button" data-input-counter-increment={product.id} class="white p-4 h-11 text-brown-new"
+                                        onClick={() => this.handleQuantityChange(product.id, 'increment')}>
+                                        <svg class="w-3 h-3 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div className='text-brown-new flex items-center w-[10%] pl-2'>
+                            <p>{convertToVND(product.price)}</p>
+                        </div>
+                        <div className='text-brown-new font-bold flex items-center absolute inset-y-0 right-0 w-[10%]'>
+                            <p>{convertToVND((product.price * (product.quantity || 1)))}</p>
+                        </div>
+                    </div>
+                    <div class="border-t-2 border-light-new"></div>
                     </div>
                     ))}
 
@@ -320,19 +323,19 @@ class Cart extends React.Component {
                         <div class="border-t-2 border-light-new mt-[24px] pb-[24px]"></div>
                         <div class="flex justify-between">
                             <div class='text-brown-new'>Subtotal</div>
-                            <div class='text-brown-new font-bold'>${subtotal.toFixed(2)}</div>
+                            <div class='text-brown-new font-bold'>{convertToVND(subtotal)}</div>
                         </div>
                         <div class="flex justify-between pt-6">
                             <div class='text-brown-new'>Discount</div>
-                            <div class='text-brown-new font-bold'>${discount}</div>
+                            <div class='text-brown-new font-bold'>{convertToVND(discount)}</div>
                         </div>
                         <div class="flex justify-between pt-6 pb-6">
                             <div class='text-brown-new'>Shipping Costs</div>
-                            <div class='text-brown-new font-bold'>${shippingCost}</div>
+                            <div class='text-brown-new font-bold'>{convertToVND(shippingCost)}</div>
                         </div>
                         <div class="flex justify-between pb-6">
                             <div class='text-brown-new'>Total</div>
-                            <div class='text-brown-new font-bold' onChange={this.handleTotalChange}>${total.toFixed(2)}</div>
+                            <div class='text-brown-new font-bold' onChange={this.handleTotalChange}>{convertToVND(total)}</div>
                         </div>
                         <div data-style="clean" class="flex items-end mb-3">
                             <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
@@ -437,7 +440,7 @@ class Cart extends React.Component {
                         <div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
                             <div class="bg-brown-new h-1.5 rounded-full dark:bg-brown-new w-[45%]"></div>
                         </div>
-                        <p class='text-brown-new pt-6'>Get Free shipping for orders over <span class='text-red-500'>$500.00</span></p>
+                        <p class='text-brown-new pt-6'>Get Free shipping for orders over <span class='text-red-500'>{convertToVND(500000)}</span></p>
                         <a href="#" class="pt-6 font-medium text-brown-new dark:text-brown-new hover:underline">Continue Shopping</a>
                         <div class='pt-6'>
                             <button type="button" class="text-lg w-[100%] h-[48px] text-white bg-brown-new hover:bg-amber-950 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
