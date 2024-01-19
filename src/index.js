@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 import Login from './auth/login';
 import Signup from './auth/signup';
 import ProductDetail from './views/productDetail';
@@ -9,13 +11,17 @@ import AboutUs from './views/aboutUs'
 import Home from './views/home'
 import Cart from './views/cartview'
 import Payment from './views/payment'
-import NavBar from './components/productDetails/navbar';
 import Category from './views/categories';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+const queryClient = new QueryClient();
 
+root.render(
+  <Provider store={store}>
+    <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login/>}></Route>
@@ -26,9 +32,13 @@ root.render(
         <Route path="/cart" element={<Cart/>}></Route>
         <Route path="/payment" element={<Payment/>}></Route>
         <Route path="/product-detail" element={<ProductDetail/>}></Route>
-        <Route path='/nav-bar' element={<NavBar/>}></Route>
+      
       </Routes>
     </BrowserRouter>
+    <ReactQueryDevtools initialIsOpen = {false}/>
+    </QueryClientProvider>
     
   </React.StrictMode>
+  </Provider>
+  
 );
