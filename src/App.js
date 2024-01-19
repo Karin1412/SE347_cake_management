@@ -1,23 +1,17 @@
-import NavBar from "./components/user/nav";
-import Intro from "./components/user/home/Intro";
-import Products from "./components/user/home/products";
-import Story from "./components/user/home/story";
-import Footer from "./components/user/footer";
+import React, {Fragment} from "react"
+import { useEffect } from "react";
+import axios from "axios";
+
 function App() {
+  useEffect(() => {
+    fetchApi()
+  }, [])
+
+  const fetchApi = async () => {
+    const res = await axios.get(`${process.env.REACT_API_URL_BACKEND}/product/getAll`)
+  }
   return (
-    <div className="flex flex-col">
-        <div className='w-full h-full'>
-          <NavBar />
-          <Intro />
-        </div>
-        <div className="w-screen flex flex-col">
-          <Products />
-          <Story />
-        </div>
-        <div className="w-full flex">
-          <Footer />
-        </div>
-    </div>
+    <div></div>
     
   );
 }
